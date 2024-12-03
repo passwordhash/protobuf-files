@@ -1,6 +1,8 @@
 syntax = "proto3";
 
-package account;
+package account_v1;
+
+option go_package = "pkg/account_v1;account_v1";
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
