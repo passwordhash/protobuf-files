@@ -17,7 +17,7 @@ message Account {
 }
 
 service AccountService {
-    rpc Create(CreateRequest) returns (CreateResponse);
+    rpc Signup(CreateRequest) returns (CreateResponse);
     rpc Login(LoginRequest) returns (LoginResponse);
 
     rpc Get(GetByIdRequest) returns (GetResponse);
