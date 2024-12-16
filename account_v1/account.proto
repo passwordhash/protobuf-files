@@ -19,6 +19,7 @@ message Account {
 service AccountService {
     rpc Signup(CreateRequest) returns (CreateResponse);
     rpc Login(LoginRequest) returns (LoginResponse);
+    rpc GetPublicKey(google.protobuf.Empty) returns (GetPublicKeyResponse);
 
     rpc Get(GetByIdRequest) returns (GetResponse);
     rpc GetAll(google.protobuf.Empty) returns (GetAllResponse);
@@ -44,6 +45,11 @@ message LoginRequest {
 
 message LoginResponse {
     string jwt_token = 1;
+    reserved 2 to 5;
+}
+
+message GetPublicKeyResponse {
+    string public_key = 1;
     reserved 2 to 5;
 }
 
