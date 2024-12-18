@@ -19,6 +19,8 @@ message Account {
 service AccountService {
     rpc Signup(CreateRequest) returns (CreateResponse);
     rpc Login(LoginRequest) returns (LoginResponse);
+    rpc VerifyToken(VerifyTokenRequest) returns (VerifyTokenResponse);
+
     rpc GetPublicKey(google.protobuf.Empty) returns (GetPublicKeyResponse);
 
     rpc Get(GetByIdRequest) returns (GetResponse);
@@ -45,6 +47,16 @@ message LoginRequest {
 
 message LoginResponse {
     string jwt_token = 1;
+    reserved 2 to 5;
+}
+
+message VerifyTokenRequest {
+    string jwt_token = 1;
+    reserved 2 to 5;
+}
+
+message VerifyTokenResponse {
+    string uuid = 1;
     reserved 2 to 5;
 }
 
