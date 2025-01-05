@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-package account_v1;
+//package account_v1;
+package src.interfaces.grpc.account_v1;
 
 option go_package = "pkg/account_v1;account_v1";
 
@@ -25,6 +26,8 @@ service AccountService {
 
     rpc Get(GetByIdRequest) returns (GetResponse);
     rpc GetAll(google.protobuf.Empty) returns (GetAllResponse);
+
+    rpc HealthCheck(google.protobuf.Empty) returns (google.protobuf.Empty);
 }
 
 message CreateRequest {
@@ -78,4 +81,3 @@ message GetAllResponse {
     repeated Account accounts = 1;
     reserved 2 to 5;
 }
-
